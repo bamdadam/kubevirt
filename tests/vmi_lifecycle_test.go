@@ -112,7 +112,7 @@ var _ = Describe("[rfe_id:273][crit:high][vendor:cnv-qe@redhat.com][level:compon
 			vmi := libvmifact.NewGuestless(libvmi.WithStartStrategy(v1.StartStrategyPaused))
 			vmi = libvmops.RunVMIAndExpectLaunch(vmi, startupTimeout)
 			Eventually(matcher.ThisVMI(vmi), 30*time.Second, 2*time.Second).Should(matcher.HaveConditionTrue(v1.VirtualMachineInstancePaused))
-			fmt.Println("test3")
+			fmt.Println("test4")
 			By("Unpausing VMI")
 			err := kubevirt.Client().VirtualMachineInstance(vmi.Namespace).Unpause(context.Background(), vmi.Name, &v1.UnpauseOptions{})
 			Expect(err).ToNot(HaveOccurred())
